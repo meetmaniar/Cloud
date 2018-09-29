@@ -3,6 +3,7 @@ package csvToJson;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,39 +20,38 @@ public class main {
 		File file = new File(path);
 		
 
-	FileInputStream inputStream = new FileInputStream(file);
-	InputStreamReader ip = new InputStreamReader(inputStream,"UTF-8");
-	BufferedReader bf = new BufferedReader(ip);
+	Scanner sc = new Scanner(file);
 	
 	
-	JSONObject obj=new JSONObject();
 	
 	try {
 		
 		int i=0;
 		PrintWriter outputfile= new PrintWriter(args[1]);
-		
-		while(inputStream.read()!=-1) {
-			
-			String data=bf.readLine();
+		JSONArray transaction = new JSONArray();
+		while(sc.hasNextLine()) {
+			JSONObject obj=new JSONObject();
+			String data=sc.nextLine();
 			String[] values = data.split(",");
 			
 			JSONArray item = new JSONArray();
 			
-			for(int j=0;j<values.length;j++) {
-			
-			item.add(values[j]);
+			for(String s : values) {
+				item.add(s);
 			}
-			obj.put("items", item);
+			
 			i++;
 			obj.put("tid", i);
-		outputfile.println(obj.toJSONString());	
+			obj.put("items", item);
+			transaction.add(obj);
+			
+			
 		}
+		
+		outputfile.print(transaction.toJSONString());	
 		outputfile.close();
 		outputfile.flush();
-		bf.close();
-		ip.close();
-		inputStream.close();
+		sc.close();
 	}
 	
 	
