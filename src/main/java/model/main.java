@@ -76,6 +76,10 @@ import scala.Tuple2;
 			if(dataobj.getAntecedent().contains(input)) {
 				System.out.println(dataobj.getAntecedent() +"===>"+dataobj.getConsequent() + "===>" + dataobj.getConfidence());
 			}
+			else {
+				System.out.println(input + " has no enough support or is not in the list.");
+				break;
+			}
 		}
 			
 	}
