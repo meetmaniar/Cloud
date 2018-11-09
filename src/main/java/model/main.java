@@ -35,6 +35,7 @@ import scala.Tuple2;
 	public class main {
 		
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
@@ -67,21 +68,34 @@ import scala.Tuple2;
 		  items.add(dataobj);
 		}
 		Scanner reader = new Scanner(System.in);
-		//recommenders
+		//recommender
 		System.out.print("Enter the item you want to search :");
-		String input = reader.nextLine();
+		String input = args[0];
+		JSONArray array = new JSONArray();
+		JSONArray value = new JSONArray();
+		JSONObject obj  = new JSONObject();
+		PrintWriter outputfile= new PrintWriter("C:\\Users\\meetr\\Downloads\\Apriori-R\\Apriori\\dataset1111.json");
 		
 		for(data dataobj : items){
 			//System.out.println("Antecedent:"+ dataobj.getAntecedent() + " , Consequent" +dataobj.getConsequent()+"Confidence:" + dataobj.getConfidence());
 			if(dataobj.getAntecedent().contains(input)) {
 				System.out.println(dataobj.getAntecedent() +"===>"+dataobj.getConsequent() + "===>" + dataobj.getConfidence());
+				value.add(dataobj.getConsequent());
+				obj.put(dataobj.getAntecedent(), value);
+				
+				
 			}
+			
 			else {
 				System.out.println(input + " has no enough support or is not in the list.");
 				break;
 			}
-		}
 			
+		}
+		array.add(obj);
+		outputfile.print(array.toJSONString());	
+		outputfile.close();
+		outputfile.flush();
 	}
 	
 }
