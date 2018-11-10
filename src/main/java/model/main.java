@@ -47,7 +47,7 @@ import scala.Tuple2;
 		
 		
 		JavaRDD<String> file = jsc.textFile("C:\\Users\\meetr\\Downloads\\Apriori-R\\Apriori\\Market_Basket_Optimisation.txt");
-		JavaRDD<List<String>> transaction = file.map(line -> Arrays.asList(line.split(" ")));
+		JavaRDD<List<String>> transaction = file.map(line -> Arrays.asList(line.split(",")));
 		
 		FPGrowth fpg = new FPGrowth().setMinSupport(0.02).setNumPartitions(1);
 		FPGrowthModel<String> model = fpg.run(transaction);
