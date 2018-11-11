@@ -24,6 +24,7 @@ import org.apache.spark.mllib.fpm.FPGrowth;
 import org.apache.spark.mllib.fpm.FPGrowthModel;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import  java.io.Serializable;
 
@@ -46,8 +47,8 @@ import scala.Tuple2;
 	
 		
 		
-		JavaRDD<String> file = jsc.textFile("C:\\Users\\meetr\\Downloads\\Apriori-R\\Apriori\\Market_Basket_Optimisation.txt");
-		JavaRDD<List<String>> transaction = file.map(line -> Arrays.asList(line.split(" ")));
+		JavaRDD<String> file = jsc.textFile("C:\\Users\\meetr\\Downloads\\Apriori-R\\Apriori\\Market_Basket_Optimisation.csv");
+		JavaRDD<List<String>> transaction = file.map(line -> Arrays.asList(line.split(",")));
 		
 		FPGrowth fpg = new FPGrowth().setMinSupport(0.02).setNumPartitions(1);
 		FPGrowthModel<String> model = fpg.run(transaction);
@@ -69,16 +70,19 @@ import scala.Tuple2;
 		}
 		Scanner reader = new Scanner(System.in);
 		//recommender
-		System.out.print("Enter the item you want to search :");
-		String input = args[0];
+		//System.out.print("Enter the item you want to search :");
+		//String input = reader.nextLine();
 		JSONArray array = new JSONArray();
 		JSONArray value = new JSONArray();
 		JSONObject obj  = new JSONObject();
-		PrintWriter outputfile= new PrintWriter("C:\\Users\\meetr\\Downloads\\Apriori-R\\Apriori\\dataset1111.json");
+		
+		PrintWriter outputfile= new PrintWriter("C:\\Users\\meetr\\Downloads\\Apriori-R\\Apriori\\dataset12.json");
 		
 		for(data dataobj : items){
 			//System.out.println("Antecedent:"+ dataobj.getAntecedent() + " , Consequent" +dataobj.getConsequent()+"Confidence:" + dataobj.getConfidence());
-			if(dataobj.getAntecedent().contains(input)) {
+			value.add(dataobj.getConsequent());
+			obj.put(dataobj.getAntecedent(), value);
+			/*if(dataobj.getAntecedent().contains(input)) {
 				System.out.println(dataobj.getAntecedent() +"===>"+dataobj.getConsequent() + "===>" + dataobj.getConfidence());
 				value.add(dataobj.getConsequent());
 				obj.put(dataobj.getAntecedent(), value);
@@ -90,7 +94,7 @@ import scala.Tuple2;
 				System.out.println(input + " has no enough support or is not in the list.");
 				break;
 			}
-			
+			*/
 		}
 		array.add(obj);
 		outputfile.print(array.toJSONString());	
