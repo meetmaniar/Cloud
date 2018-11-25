@@ -78,12 +78,20 @@ def register():
     print(client_name, client_email)
     print(DB.list_collection_names())
     if client_name + "_dataset" in DB.list_collection_names():
-        return Response("Username is already in use", 401)
+        return_object = {
+            "success": False,
+            "message": "Username is already in use"
+        }
+        return Response(json.dumps(return_object), 401, mimetype="application/json")
 
     user_collection = DB['users']
     user_emails = user_collection.find({'client_email': client_email})
     if user_emails.count() != 0:
-        return Response("Already registered using this email", 401)
+        return_object = {
+            "success": False,
+            "message": "Already registered using this email"
+        }
+        return Response(json.dumps(return_object), 401, mimetype="application/json")
 
     print(DB['users'].insert({'client_email':client_email, 'client_name': client_name, 'registration_time': datetime.datetime.utcnow()}))
 
@@ -99,7 +107,31 @@ def register():
     result = collection.insert_one(first_)
     print(result)
 
-    return Response("Registration complete", 200)
+    return_object = {
+        "success": True,
+        "message": "Registration complete"
+    }
+
+    return Response(json.dumps(return_object), 200, mimetype="application/json")
+
+
+@app.route('/unregister', methods=['DELETE'])
+@auth.login_required
+def unregister():
+    client_email = auth.get_auth()['username']
+    client_name = DB['users'].find({'client_email':client_email},{'client_name':1})[0]['client_name']
+    print(client_name)
+    DB.drop_collection(client_name + '_dataset')
+    result = DB['users'].delete_one({'client_email':client_email})
+    print(result)
+    if client_name + "_dataset" in DB.list_collection_names() or DB['users'].find({'client_email': client_email}).count()!=0:
+        return_response = {
+            'success': False,
+            'message': 'Unable to unregister'
+        }
+        return Response(json.dumps(return_response), 500, mimetype='application/json')
+    else:
+        return Response(json.dumps({'success':True, 'message': 'Successfully unregistered'}), 200, mimetype='application/json')
 
 
 @app.route("/login", methods=['GET'])
@@ -109,7 +141,10 @@ def login():
     # print(client_email)
     client_name = DB['users'].find({'client_email':client_email},{'client_name':1})[0]['client_name']
 
-    return Response(json.dumps({'client_name':client_name}), 200)
+    return Response(json.dumps({'success':True, 'message':{
+        'status': 'Login successful',
+        'client_name': client_name
+    }}), 200, mimetype="application/json")
 
 
 @app.route("/relatedproducts", methods=['POST'])
@@ -132,7 +167,23 @@ def related_product():
         except KeyError:
             result[item] = None
     print('result:', result)
-    return Response(json.dumps(result), 200)
+    return Response(json.dumps({'success':True, 'message':result}), 200, mimetype="application/json")
+
+
+@app.route('/relatedproducts/<item>', methods=['GET'])
+def get_related(item):
+    collection = DB['base_dataset']
+    # query = {"client_name": client_name}
+    # print(query)
+    documents = collection.find({},{'client_data':1})[0]['client_data']
+    print(documents)
+
+    try:
+        result = documents[item]
+    except KeyError:
+        result = None
+    print('result:', result)
+    return Response(json.dumps({'success':True, 'message':result}), 200, mimetype="application/json")
 
 
 @app.route("/update", methods=['POST'])
@@ -143,7 +194,7 @@ def update():
     collection = DB[client_name + '_dataset']
     documents = collection.find({},{'client_data':1})[0]['client_data']
 
-    return Response(json.dumps(documents), 200)
+    return Response(json.dumps({'success':True, 'message':documents}), 200, mimetype="application/json")
 
 
 @app.route("/submitdata", methods=['POST'])
@@ -177,9 +228,13 @@ def submit_data():
         print('Update success on submitted data')
         collection = DB[client_name + '_dataset']
         new_dataset = collection.find({'type':'dataset'}, {'client_data':1})[0]['client_data']
-        return Response(json.dumps(new_dataset), 200)
+        return Response(json.dumps({'success':True, 'message':new_dataset}), 200, mimetype="application/json")
     else:
-        return Response('Unable to update dataset', 500)
+        return_response = {
+            'success':False,
+            'message':'Unable to update dataset'
+        }
+        return Response(json.dumps(return_response), 500, mimetype="application/json")
 
 
 # app.run(host='localhost', port=80, debug=False, threaded=True)
