@@ -1,19 +1,19 @@
-#DEVELOPMENT
+# DEVELOPMENT
 
 
-##Clone this repository
+## Clone this repository
 
 * Go to UI folder
 ```
 cd UI
 ```
 
-##To install dependencies, run:
+## To install dependencies, run:
 ```
 npm install
 ```
 
-##To deploy on local server
+## To deploy on local server
 * Pre-requisite, you must have an apache/nginx server installed on your computer
 * To access, the backend from the frontend, you must change the proxy. Open package.json, change:
 ```
@@ -32,7 +32,7 @@ npm run start
 npm run sass
 ```
 
-##To build a production version
+## To build a production version
 ```
 npm run build
 ```
