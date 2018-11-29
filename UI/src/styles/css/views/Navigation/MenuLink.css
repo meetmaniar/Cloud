@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.menu-link-img {
+  font-size: 50px;
+}
+
+.menu-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 10px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .menu-link {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
+
+.menu-link-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 10px;
+}
+@media only screen and (min-width: 768px) {
+  .menu-link-button {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #fff;
+  text-decoration: none;
+  background: #888;
+}
+@media only screen and (min-width: 768px) {
+  .menu-link:hover,
+.menu-link:focus {
+    border-left: 5px solid rgba(255, 255, 255, 0.7);
+  }
+}
+
+.menu-link-title {
+  padding-top: 10px;
+}
+
+/*# sourceMappingURL=MenuLink.css.map */

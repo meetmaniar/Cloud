@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.search {
+  padding-top: 100px;
+  width: 100%;
+  min-height: 100vh;
+}
+@media only screen and (min-width: 768px) {
+  .search {
+    padding-top: 20px;
+  }
+}
+
+.search-buttons {
+  margin: 0 10px;
+}
+
+.search-panel {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  justify-content: stretch;
+  color: #343434;
+  box-shadow: 0 0 20px 5px #CCC;
+  margin: 10px;
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 480px) {
+  .search-panel {
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+}
+
+.search-img {
+  max-width: 250px;
+  padding: 20px 20px;
+  width: 100%;
+}
+@media only screen and (min-width: 480px) {
+  .search-img {
+    max-width: 160px;
+    padding: inherit;
+    width: 160px;
+  }
+}
+
+.search-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-body {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-name {
+  font-size: 2rem;
+  text-align: center;
+}
+@media only screen and (min-width: 480px) {
+  .search-name {
+    text-align: left;
+  }
+}
+
+.search-access {
+  text-align: center;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #CCC;
+  color: #C10F3A;
+}
+@media only screen and (min-width: 480px) {
+  .search-access {
+    text-align: left;
+  }
+}
+
+.search-ticket-info {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin-top: 10px;
+}
+
+.search-ticket-info > table {
+  width: -moz-available;
+}
+
+.search-uid,
+.search-number {
+  text-align: center;
+  padding: 10px;
+  color: #C10F3A;
+  background: #fff;
+  font-weight: 400;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+
+.search-uid-value,
+.search-number-value {
+  text-align: center;
+  color: #C10F3A;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+@media only screen and (min-width: 768px) {
+  .search-uid-value,
+.search-number-value {
+    font-size: 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=Search.css.map */

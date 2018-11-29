@@ -1,0 +1,27 @@
+<?php
+$config = [
+    'event_name' => 'Memphis Marathon',
+    'social_post_title' => "MemphisMarathon2018",
+    'social_post_description' => "",
+    'url' => 'https://digital-tote-images.connectngo.com',
+    'english' => true,
+    'french' => true,
+    'Account_Less_Registration' => true,
+    'UID_Sign_Up' => true,
+    'Serial_Number_Sign_Up' => true,
+    'Open_Loop_Cashless' => true,
+    'Closed_Loop_Cashless' => true,
+    'Online_Deposit' => true,
+    'Show_Balance' => true,
+    'Refunds_Cashless' => true,
+    'Add_Wristband_Possibility' => true,
+    'Confirmation_Email' => true,
+    'Thank_You_Page' => true,
+    'Allow_Identical_Email' => false,
+    'Activate_Ticket' => true,
+    'Main_Color' => '#000000',
+    'Second_Color' => '#555555',
+    'Third_Color' => '#999999',
+    'Bucket_Path' => 'https://s3.amazonaws.com/cng-event-pictures/memphis-marathon-18/microsite/',
+];
+echo json_encode($config);

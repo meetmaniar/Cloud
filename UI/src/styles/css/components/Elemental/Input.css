@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.input {
+  border-radius: 0;
+  padding: 10px;
+  font-weight: 400;
+  text-align: left;
+}
+
+input::placeholder {
+  color: #CCC;
+}
+
+.default-label {
+  display: block;
+  color: #888;
+}
+
+.input-focus {
+  font-size: 12px;
+  color: #000;
+}
+
+.default-input {
+  width: 100%;
+  display: block;
+  border: 0;
+  border: 1px solid #CCC;
+  outline: 0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.default-input:focus {
+  display: block;
+  border: 0;
+  border: 1px solid #000;
+  outline: 0;
+}
+
+/*# sourceMappingURL=Input.css.map */

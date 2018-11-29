@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .menu {
+    justify-content: center;
+  }
+}
+
+.nav-logo-mobile {
+  color: #fff;
+  margin: 0 10px;
+  height: 60px;
+  font-size: 40px;
+}
+@media only screen and (min-width: 768px) {
+  .nav-logo-mobile {
+    display: none;
+  }
+}
+.nav-logo-mobile svg {
+  height: 60px;
+}
+
+.nav-logo-desktop {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .nav-logo-desktop {
+    display: block;
+    height: 180px;
+    margin: 10px;
+    font-size: 120px;
+    color: #fff;
+  }
+}
+
+.nav-burger {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .nav-burger {
+    display: none;
+  }
+}
+
+.nav-burger svg {
+  height: 40px !important;
+  width: 40px !important;
+}
+
+/*# sourceMappingURL=Menu.css.map */

@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.login-panel {
+  background: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px 5px #CCC;
+}
+
+.login-header-panel {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 30px;
+  background: #6ac8d3;
+}
+.login-header-panel h1 {
+  color: #343434;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=Login.css.map */

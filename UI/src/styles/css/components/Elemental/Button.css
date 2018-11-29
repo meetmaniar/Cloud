@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.button {
+  border-radius: 0;
+  border: 0;
+  padding: 10px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  min-width: 100%;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.button:hover, .button:focus {
+  background: #eee;
+  outline: none;
+}
+
+.dark {
+  background: #6ac8d3;
+  color: #343434;
+}
+
+.light {
+  background: #343434;
+  color: #6ac8d3;
+}
+
+/*# sourceMappingURL=Button.css.map */

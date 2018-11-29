@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.top-association {
+  padding-top: 100px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .top-association {
+    padding-top: 10px;
+  }
+}
+
+/*# sourceMappingURL=TopAssociations.css.map */

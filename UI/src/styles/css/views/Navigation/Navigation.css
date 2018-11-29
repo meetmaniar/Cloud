@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.navigation {
+  visibility: hidden;
+  background: #343434;
+  min-height: 50px;
+}
+@media only screen and (min-width: 768px) {
+  .navigation {
+    height: 100%;
+    min-width: 250px;
+  }
+}
+
+.navigation.fixed {
+  visibility: visible;
+  background: #343434;
+  min-height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+@media only screen and (max-width: 767px) {
+  .navigation.fixed {
+    width: 100vw;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navigation.fixed {
+    height: 100%;
+    min-width: 250px;
+    overflow: scroll;
+  }
+}
+@media only screen and (max-height: 671px) and (min-width: 768px) {
+  .navigation.fixed {
+    display: none;
+  }
+}
+
+.navigation .default-image {
+  display: inline-block;
+  padding: 0;
+}
+
+@media only screen and (max-height: 480px) and (max-width: 767px) {
+  .menu-scroll {
+    height: calc(100vh - 60px);
+    overflow: scroll;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu-scroll {
+    height: auto;
+    overflow: scroll;
+  }
+}
+
+/*# sourceMappingURL=Navigation.css.map */

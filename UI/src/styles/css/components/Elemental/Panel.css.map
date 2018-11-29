@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../../scss/global.scss","../../../scss/components/Elemental/Panel.scss"],"names":[],"mappings":"AAsCQ;ACpCR;EACI;EACA;EACA;EAEA;;;AAEJ;EACI;EACA;EACA,ODRQ;ECSR;EACA;EACA;EACA,YDNO;;;ACQX;EACI;EACA,ODhBQ;ECiBR;EACA,YDZO;;;ACcX;EACI;EACA;EACA,ODvBQ;ECwBR,YDtBI;ECuBJ","file":"Panel.css"}

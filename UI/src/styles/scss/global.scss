@@ -1,0 +1,39 @@
+// SASS Variables
+// @import "../../../node_modules/bootstrap/scss/functions"; 
+// @import "../../../node_modules/bootstrap/scss/variables";
+
+$mainColor: #343434;
+$black: #000;
+$white: #fff;
+$backgroundColor: #6ac8d3;
+$grey: #CCC;
+$lightGrey: #eee;
+$softGrey: rgba(255,255,255, 0.7);
+$errorMessage: #d11141;
+$successMessage: #00b159;
+$infoMessage: #00a3e2;
+$btnbackcolor: #343434;
+$btnfontcolor: #fff;
+$btnCancelColor: #f00;
+$inputColor: #000;
+$inputPlaceholder: #fff;
+$inputBorder: #fff;
+$inputbg: rgba(#fff, 0.5);
+$orange: #f17f2a;
+$red: #C10F3A;
+$redHovered: rgb(218, 77, 110);
+$darkGrey: #888;
+$green: #71c855;
+$footerColor: #ef9735;
+$activeState: #71cacc;
+$facebookColor: #3b5a99;
+$twitterColor: #24a8e0;
+$redLink: #cc2200;
+$blueLink: #0645ad;
+$primary: #bc2c3c;
+$gold: #E8B007;
+$bronze: #A28144;
+$silver: #B3B4B3;
+$platinum: #bc2c3c;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,400,600');

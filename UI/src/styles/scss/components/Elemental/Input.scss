@@ -1,0 +1,39 @@
+@import "../../global.scss";
+
+.input {
+    border-radius: 0;
+    padding: 10px;
+    font-weight: 400;
+    text-align: left;
+}
+
+input::placeholder {
+    color: $grey;
+}
+
+.default-label {
+    display: block;
+    color: $darkGrey;
+}
+
+.input-focus {
+    font-size: 12px;
+    color: $black;
+}
+
+.default-input {
+    width: 100%;
+    display: block;
+    border: 0;
+    border: 1px solid $grey;
+    outline: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.default-input:focus {
+    display: block;
+    border: 0;
+    border: 1px solid $black;
+    outline: 0;
+}

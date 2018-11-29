@@ -1,0 +1,29 @@
+@import "../../global.scss";
+
+.button{
+    border-radius: 0;
+    border: 0;
+    padding: 10px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    min-width: 100%;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
+.button:hover, .button:focus{
+    background: $lightGrey;
+    outline: none;
+}
+
+.dark{
+    background: $backgroundColor;
+    color: $mainColor;
+}
+.light{
+    background: $mainColor;
+    color: $backgroundColor;
+}

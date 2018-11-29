@@ -1,0 +1,46 @@
+@import "../../global.scss";
+
+.menu-link-img{
+    // height: 50px;
+    font-size: 50px;
+}
+
+.menu-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $softGrey;
+    padding: 10px 10px;
+    cursor: pointer;
+    @media only screen and (min-width: 768px) {
+        border-top: 0;
+        border-bottom: 0;
+      }
+}
+.menu-link-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $softGrey;
+    padding: 10px 10px;
+    @media only screen and (min-width: 768px) {
+        border-top: 0;
+        border-bottom: 0;
+      }
+}
+
+.menu-link:hover,
+.menu-link:focus{
+ color: $white;
+ text-decoration: none;
+ background: $darkGrey;
+ @media only screen and (min-width: 768px) {
+    border-left: 5px solid $softGrey;
+  }
+}
+
+.menu-link-title{
+    padding-top: 10px;
+}

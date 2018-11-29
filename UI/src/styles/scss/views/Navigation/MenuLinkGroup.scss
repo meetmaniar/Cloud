@@ -1,0 +1,23 @@
+@import "../../global.scss";
+
+.menu-link-group{
+    display: none;
+    flex-direction: column;
+    color: $white;
+    background: $mainColor;
+    font-weight: 400;
+    text-transform: uppercase;
+    @media only screen and (max-width: 767px) {
+        width: 100vw;
+        position: absolute;
+        z-index: 5;
+      }
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        background: $mainColor;
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+}

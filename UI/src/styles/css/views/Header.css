@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.header {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .header {
+    display: block;
+  }
+}
+
+.header-panel {
+  display: block;
+  color: #C10F3A;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+}
+@media only screen and (min-width: 1024px) {
+  .header-panel {
+    padding-left: 5vw;
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */

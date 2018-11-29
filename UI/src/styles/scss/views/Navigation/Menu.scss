@@ -1,0 +1,50 @@
+@import "../../global.scss";
+
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (min-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.nav-logo-mobile{
+    color: $white;
+    margin: 0 10px;
+    height: 60px;
+    font-size: 40px;
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+    svg{
+        height: 60px;
+    }
+}
+.nav-logo-desktop{
+    display: none;
+    @media only screen and (min-width: 768px) {
+        display: block;
+        height: 180px;
+        margin: 10px;
+        font-size: 120px;
+        color: $white;
+    }
+}
+
+.nav-burger{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    cursor: pointer;
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}
+.nav-burger svg{
+    height: 40px !important;
+    width: 40px !important;
+}

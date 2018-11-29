@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+.default-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    // color: $mainColor;
+    font-size: 1.5rem;
+}
+.default-panel-heading{
+    display: flex;
+    flex-wrap: wrap;
+    color: $mainColor;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px;
+    background: $softGrey;
+}
+.default-panel-footer{
+    display: block;
+    color: $mainColor;
+    padding: 10px;
+    background: $softGrey;
+}
+.default-panel-body{
+    flex: 1;
+    display: block;
+    color: $mainColor;
+    background: $white;
+    padding: 10px;
+}

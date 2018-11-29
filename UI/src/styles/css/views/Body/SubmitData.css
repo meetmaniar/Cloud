@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.submit-data {
+  padding-top: 100px;
+  width: 100%;
+  min-height: 100vh;
+}
+@media only screen and (min-width: 768px) {
+  .submit-data {
+    padding-top: 10px;
+  }
+}
+
+.key-words-item {
+  cursor: pointer;
+  padding: 5px;
+  background: #6ac8d3;
+  margin: 5px;
+}
+
+.key-words-item:hover {
+  background: #343434;
+  color: #fff;
+}
+
+/*# sourceMappingURL=SubmitData.css.map */

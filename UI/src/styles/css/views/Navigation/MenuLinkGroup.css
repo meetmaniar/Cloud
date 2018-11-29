@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,400,600");
+.menu-link-group {
+  display: none;
+  flex-direction: column;
+  color: #fff;
+  background: #343434;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 767px) {
+  .menu-link-group {
+    width: 100vw;
+    position: absolute;
+    z-index: 5;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu-link-group {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: #343434;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+}
+
+/*# sourceMappingURL=MenuLinkGroup.css.map */

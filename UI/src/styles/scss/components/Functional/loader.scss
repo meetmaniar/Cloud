@@ -1,0 +1,13 @@
+@import "../../global.scss";
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: $mainColor;
+  }
